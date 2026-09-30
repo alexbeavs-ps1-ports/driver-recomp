@@ -6,7 +6,9 @@ name = "Driver"
 id = "SLUS-00842"
 players = 1
 exe = "disc/SLUS_008.42"
-disc = ""
+disc = "disc/Driver - You Are the Wheelman (USA) (Rev 1).cue"
+discs = ["disc/Driver - You Are the Wheelman (USA) (Rev 1).cue"]
+disc_serials = ["SLUS-00842"]
 load_address = "0x00010000"
 entry_pc = "0x000738F8"
 text_size = "0x00087000"
@@ -15,8 +17,8 @@ stack_base = "0x801FFFF0"
 # Digests are for data Track 01 (first BINARY FILE / TRACK 01).
 [prepare_disc]
 out_dir = "disc"
-bin_name = "disc1.bin"
-cue_name = "disc1.cue"
+bin_name = "Driver - You Are the Wheelman (USA) (Rev 1).bin"
+cue_name = "Driver - You Are the Wheelman (USA) (Rev 1).cue"
 boot_exe = "SLUS_008.42"
 known_sizes = [747030480]
 known_md5 = [
@@ -30,11 +32,13 @@ known_crc32 = [
 ]
 
 [recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
 
 [runtime]
+openbios = false
 window_title = "driver- Recompiled"
 memcard_dir = "saves"
 
